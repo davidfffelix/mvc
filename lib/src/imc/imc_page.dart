@@ -11,7 +11,6 @@ class ImcPage extends StatefulWidget {
 
 class _ImcPageState extends State<ImcPage> {
   var height = 0.0;
-
   var weight = 0.0;
 
   @override
