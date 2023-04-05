@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'controllers/imc_controller.dart';
+
 class ImcPage extends StatefulWidget {
   const ImcPage({super.key});
 
@@ -8,9 +10,11 @@ class ImcPage extends StatefulWidget {
 }
 
 class _ImcPageState extends State<ImcPage> {
-  var height = 0.0;
-  var weight = 0.0;
+  var height = '0.0';
+  var weight = '0.0';
   var result = '';
+
+  final controller = ImcController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,7 @@ class _ImcPageState extends State<ImcPage> {
         children: [
           TextFormField(
             onChanged: (value) {
-              height = double.parse(value);
+              height = double.parse(value) as String;
             },
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
@@ -31,7 +35,8 @@ class _ImcPageState extends State<ImcPage> {
           ),
           TextFormField(
             onChanged: (value) {
-              height = double.parse(value);
+              // weight = double.parse(value) as String;
+              weight = (value);
             },
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
